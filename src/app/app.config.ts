@@ -3,9 +3,11 @@ import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { headerInterceptor } from './modules/shared/interceptors/header/header.interceptor';
+import { errorInterceptor } from './modules/shared/interceptors/error/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +15,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(), provideAnimations(),
+    provideAnimations(),
+    provideHttpClient(
+      withInterceptors([headerInterceptor, errorInterceptor])
+    ),
   ]
 };

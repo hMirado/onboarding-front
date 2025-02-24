@@ -78,7 +78,7 @@ export class FormComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]],
       incorporationDate: ['', Validators.required],
       applicant: ['', Validators.required],
-      license: ['', Validators.required],
+      license: [''],
       shareholderField: this.formBuilder.array([])
     })
 
@@ -170,11 +170,13 @@ export class FormComponent implements OnInit, OnDestroy {
   isBank : boolean =false
   selectBusiness(event: any) {
     const business = this.checkBusiness(event.target.value);
+    this.isBank = business  == 'Banking' ? true : false;
     if (business == 'Banking') {
-      this.isBank = business  == 'Banking' ? true : false;
-      this.onboardingForm.controls['license'].addValidators(Validators.required)
+      this.onboardingForm.controls['license'].addValidators(Validators.required);
+      this.onboardingForm.controls['license'].updateValueAndValidity();
     } else {
       this.onboardingForm.controls['license'].removeValidators(Validators.required);
+      this.onboardingForm.controls['license'].updateValueAndValidity();
     }
   }
 
