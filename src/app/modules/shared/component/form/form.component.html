@@ -97,14 +97,14 @@
                 <div class="col">
                     <label for="license" class="form-label">Director or shareholder name</label>
                     <input type="text" class="form-control"  id="name-{{i}}" name="name" formControlName="name">
-                    <div class="error" *ngIf="(field.get('name')?.dirty || field.get('name')?.touched || !field.get('passport')?.valid) && formHasError">
+                    <div class="error" *ngIf="(field.get('name')?.dirty || field.get('name')?.touched || !field.get('name')?.valid) && field.get('name')?.hasError('required') && formHasError">
                         Please enter director or shareholder name
                     </div>
                 </div>
                 <div class="col">
                     <label for="license" class="form-label">Passport</label>
                     <input type="email" class="form-control"  id="passport-{{i}}" name="passport" formControlName="passport">
-                    <div class="error" *ngIf="(field.get('passport')?.dirty || field.get('passport')?.touched || !field.get('passport')?.valid) && formHasError">
+                    <div class="error" *ngIf="(field.get('passport')?.dirty || field.get('passport')?.touched || !field.get('passport')?.valid) && field.get('passport')?.hasError('required')  && formHasError">
                         Please enter passport number
                     </div>
                 </div>
