@@ -27,7 +27,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
 ### Test specific file
 
-Run `ng test --include /path/to/file.spec.ts` to execute the test
+Run `ng test --include /path/to/file.spec.ts (ng test --include /app/modules/shared/component/form/form.component.spec.ts)` to execute the test
+
 
 ### Run unit test
 
