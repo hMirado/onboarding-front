@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+</div>
+<div class="table-responsive">
+    <h4>List of customer onboarding</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Company Name</th>
+                <th scope="col">Entity Type</th>
+                <th scope="col">Business ACtivity</th>
+                <th scope="col">Country</th>
+                <th scope="col">Registration Number</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (onboarding of customerOnboardings; track onboarding.id) {
+                <tr>
+                    <td>{{ onboarding.company }}</td>
+                    <td>{{ onboarding.entityTypeDto.name }} </td>
+                    <td>{{ onboarding.businessDto.name }} </td>
+                    <td>{{ onboarding.country }} </td>
+                    <td>{{ onboarding.registrationNumber }} </td>
+                    <td>
+                        {{ getStatus(onboarding.statusDto != null ? onboarding.statusDto.name : null) }}
+                    </td>
+                    <td>
+                        <div class="field d-flex flex-row align-items-end justify-content-evenly">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="edit(onboarding.id)">
+                                Edit/view
+                            </button>
+                            <button type="button" class=" btn btn-sm btn-outline-danger" >
+                                Documents
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

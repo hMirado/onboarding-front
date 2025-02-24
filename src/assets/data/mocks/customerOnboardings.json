@@ -1,0 +1,236 @@
+{
+    "success": true,
+    "message": "List of customer onboarding",
+    "data": [
+        {
+            "id": 7,
+            "company": "Greenholt LLC",
+            "license": "1234567",
+            "country": "Norway",
+            "registrationNumber": "80972095",
+            "incorporationDate": "2023-06-15T21:00:00.000+00:00",
+            "applicant": "Morey Bernardez",
+            "email": "mbernardez0@sciencedaily.com",
+            "purposeDto": {
+                "id": 1,
+                "name": "Investment portfolio"
+            },
+            "entityTypeDto": {
+                "id": 1,
+                "name": "Trust"
+            },
+            "businessDto": {
+                "id": 1,
+                "name": "Banking"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 1,
+                    "name": "Jaimie Houndson",
+                    "passport": "324174558-9",
+                    "customerDto": null
+                },
+                {
+                    "id": 2,
+                    "name": "Friedrick Lugton",
+                    "passport": "359237228-9",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": {
+                "id": 1,
+                "name": "Approved"
+            }
+        },
+        {
+            "id": 8,
+            "company": "Barton Group",
+            "license": null,
+            "country": "Argentina",
+            "registrationNumber": "83172095",
+            "incorporationDate": "2022-06-23T21:00:00.000+00:00",
+            "applicant": "Garry Legges",
+            "email": "glegges1@ox.ac.uk",
+            "purposeDto": {
+                "id": 1,
+                "name": "Investment portfolio"
+            },
+            "entityTypeDto": {
+                "id": 1,
+                "name": "Trust"
+            },
+            "businessDto": {
+                "id": 2,
+                "name": "Fishing"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 3,
+                    "name": "Jaimie Houndson",
+                    "passport": "324174558-9",
+                    "customerDto": null
+                },
+                {
+                    "id": 4,
+                    "name": "Friedrick Lugton",
+                    "passport": "359237228-9",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": {
+                "id": 2,
+                "name": "Rejected"
+            }
+        },
+        {
+            "id": 9,
+            "company": "Ryan-Buckridge",
+            "license": "567878",
+            "country": "Indonesia",
+            "registrationNumber": "7852872966",
+            "incorporationDate": "2022-05-17T21:00:00.000+00:00",
+            "applicant": "Gui Quant",
+            "email": "gquant2@columbia.edu",
+            "purposeDto": {
+                "id": 3,
+                "name": "Account to operate overseas"
+            },
+            "entityTypeDto": {
+                "id": 2,
+                "name": "Associaton"
+            },
+            "businessDto": {
+                "id": 2,
+                "name": "Fishing"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 5,
+                    "name": "Care Kimbly",
+                    "passport": "545319051-5",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": null
+        },
+        {
+            "id": 10,
+            "company": "Gutkowski and Sons",
+            "license": "195-37-2673",
+            "country": "Cambodia",
+            "registrationNumber": "68828-115",
+            "incorporationDate": "2025-02-16T21:00:00.000+00:00",
+            "applicant": "Aprilette Gidley",
+            "email": "bcrosser0@elpais.com",
+            "purposeDto": {
+                "id": 1,
+                "name": "Investment portfolio"
+            },
+            "entityTypeDto": {
+                "id": 1,
+                "name": "Trust"
+            },
+            "businessDto": {
+                "id": 1,
+                "name": "Banking"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 6,
+                    "name": "Broddie Crosser",
+                    "passport": "954339459-8",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": null
+        },
+        {
+            "id": 11,
+            "company": "Littel Group",
+            "license": "443-35-8953",
+            "country": "Mauritania",
+            "registrationNumber": "10812-443",
+            "incorporationDate": "2025-02-19T21:00:00.000+00:00",
+            "applicant": "Lorrie Claesens",
+            "email": "tissacson1@g.co",
+            "purposeDto": {
+                "id": 3,
+                "name": "Account to operate overseas"
+            },
+            "entityTypeDto": {
+                "id": 2,
+                "name": "Associaton"
+            },
+            "businessDto": {
+                "id": 2,
+                "name": "Fishing"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 7,
+                    "name": "Tyrus Issacson",
+                    "passport": "533833652-9",
+                    "customerDto": null
+                },
+                {
+                    "id": 8,
+                    "name": "Broddie Crosser",
+                    "passport": "954339459-8",
+                    "customerDto": null
+                },
+                {
+                    "id": 13,
+                    "name": "Test",
+                    "passport": "kjiuè!§",
+                    "customerDto": null
+                },
+                {
+                    "id": 14,
+                    "name": "Gratia Pettifer",
+                    "passport": "953940345-6",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": {
+                "id": 1,
+                "name": "Approved"
+            }
+        },
+        {
+            "id": 12,
+            "company": "Block-Upton",
+            "license": "572-13-8481",
+            "country": "Mauritius",
+            "registrationNumber": "64725-5914",
+            "incorporationDate": "2025-02-20T21:00:00.000+00:00",
+            "applicant": "Faustina Flower",
+            "email": "sshackleton2@ovh.net",
+            "purposeDto": {
+                "id": 2,
+                "name": "Account to operate locally"
+            },
+            "entityTypeDto": {
+                "id": 1,
+                "name": "Trust"
+            },
+            "businessDto": {
+                "id": 1,
+                "name": "Banking"
+            },
+            "shareholderDtos": [
+                {
+                    "id": 9,
+                    "name": "Stephannie Shackleton",
+                    "passport": "588211170-6",
+                    "customerDto": null
+                }
+            ],
+            "statusDto": {
+                "id": 2,
+                "name": "Rejected"
+            }
+        }
+    ],
+    "status": "OK",
+    "errors": null
+}

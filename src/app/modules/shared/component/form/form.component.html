@@ -1,0 +1,132 @@
+<p *ngIf="isVerified" class="text-danger text-center">Onboarding already approuved or reject</p>
+
+<form [formGroup]="onboardingForm">
+    <div class="mb-3 row">
+        <div class="col">
+            <label for="email" class="form-label">Main purpose for applying</label>
+            <select class="form-select" id="purpose" name="purpose" formControlName="purpose">
+                <option selected disabled>Please select</option>
+                <option *ngFor="let purpose of purposes" [value]="purpose.id">{{ purpose.name }}</option>
+            </select>
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'purpose', 'required') && formHasError">
+                Please choose the main purpose for applying at MCB
+            </div>
+        </div>
+        <div class="col">
+            <label for="phone" class="form-label">Company name</label>
+            <input type="tel" id="phone" class="form-control" id="company" name="company" formControlName="company">
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'company', 'required') && formHasError">
+                Please enter the company name
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col">
+            <label for="email" class="form-label">Type of entity</label>
+            <select class="form-select" id="entity" name="entity" formControlName="entity">
+                <option selected disabled>Please select</option>
+                <option *ngFor="let entity of entities" [value]="entity.id">{{ entity.name }}</option>
+            </select>
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'entity', 'required') && formHasError">
+                Please choose the type of entity
+            </div>
+        </div>
+        <div class="col">
+            <label for="email" class="form-label">Business activity</label>
+            <select class="form-select" id="business" name="business" formControlName="business" (change)="selectBusiness($event)">
+                <option selected disabled>Please select</option>
+                <option *ngFor="let business of businesses" [value]="business.id">{{ business.name }}</option>
+            </select>
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'business', 'required') && formHasError">
+                Please choose the business activity
+            </div>
+        </div>
+        <div class="col">
+            <label for="license" class="form-label">License</label>
+            <input type="text" class="form-control"  id="license" name="license" formControlName="license">
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'license', 'required') && isBank">
+                Please enter your license
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col">
+            <label for="email" class="form-label">Country</label>
+            <select class="form-select" id="country" name="country" formControlName="country">
+                <option selected disabled>Please select</option>
+                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+            </select>
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'country', 'required') && formHasError">
+                Please select country
+            </div>
+        </div>
+        <div class="col">
+            <label for="license" class="form-label">Registry Number</label>
+            <input type="text" class="form-control"  id="registrationNumber" name="registrationNumber" formControlName="registrationNumber">
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'registrationNumber', 'required') && formHasError">
+                Please enter registry number
+            </div>
+        </div>
+        <div class="col">
+            <label for="license" class="form-label">Incorporation Date</label>
+            <input type="date" class="form-control"  id="incorporationDate" name="incorporationDate" formControlName="incorporationDate">
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'incorporationDate', 'required') && formHasError">
+                Please enter incorporation date
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col">
+            <label for="license" class="form-label">Applicant fullname</label>
+            <input type="text" class="form-control"  id="applicant" name="applicant" formControlName="applicant">
+            <div class="error" *ngIf="!helperService.formValid(onboardingForm, 'applicant', 'required') && formHasError">
+                Please enter applicant
+            </div>
+        </div>
+        <div class="col">
+            <label for="license" class="form-label">Email for communication</label>
+            <input type="email" class="form-control"  id="email" name="email" formControlName="email">
+            <div class="error" *ngIf="(!helperService.formValid(onboardingForm, 'email', 'required') || !helperService.formValid(onboardingForm, 'email', 'pattern')) && formHasError">
+                Please enter valid email
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 p-1 border" formArrayName="shareholderField">
+        <ng-container *ngFor="let field of shareholderField.controls; let i = index;" [formGroupName]="i">
+            <div class="row">
+                <div class="col">
+                    <label for="license" class="form-label">Director or shareholder name</label>
+                    <input type="text" class="form-control"  id="name-{{i}}" name="name" formControlName="name">
+                    <div class="error" *ngIf="(field.get('name')?.dirty || field.get('name')?.touched || !field.get('passport')?.valid) && formHasError">
+                        Please enter director or shareholder name
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="license" class="form-label">Passport</label>
+                    <input type="email" class="form-control"  id="passport-{{i}}" name="passport" formControlName="passport">
+                    <div class="error" *ngIf="(field.get('passport')?.dirty || field.get('passport')?.touched || !field.get('passport')?.valid) && formHasError">
+                        Please enter passport number
+                    </div>
+                </div>
+                <div *ngIf="!isVerified" class="field col-2 d-flex flex-row align-items-end justify-content-evenly">
+                    <button type="button" class="btn btn-outline-primary" (click)="addShareholderField()">+</button>
+                    <button *ngIf="shareholderField.length > 1" type="button" class="btn btn-outline-danger" (click)="removeShareholderField(i)">-</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="d-grid">
+        <button *ngIf="!isEdit else edit" type="submit" class="btn btn-outline-primary submit" id="submit" (click)="submit()">Save Request</button>
+        <ng-template #edit>
+            <div class="row" *ngIf="!isVerified">
+                <button type="submit" class="col btn btn-outline-primary" id="update" (click)="update()">Update value</button>
+                <ng-container>
+                    <button type="submit" class="col btn btn-outline-success" id="approuve" (click)="valid(approuved.id)">Valid</button>
+                    <button type="submit" class="col btn btn-outline-danger" id="reject" (click)="valid(rejected.id)">Reject</button>
+                </ng-container>
+            </div>
+
+        </ng-template>
+    </div>
+</form>

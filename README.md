@@ -1,27 +1,34 @@
 # Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## Prerequiest
 
-## Development server
+- [Node.js](https://nodejs.org/) (version 20 or higher)
+- [npm](https://www.npmjs.com/)
+- [Angular CLI](https://cli.angular.io/) (version 18.2.11 `npm install -g @angular/cli`)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+### Clone projet
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```Bash```
+- git clone https://github.com/hMirado/onboarding-front.git
+- cd projet_folder
 
-## Build
+### Install dependancies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash ```
+- npm install
 
-## Running unit tests
+## Run Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Development server
 
-## Running end-to-end tests
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Test specific file
 
-## Further help
+Run `ng test --include /path/to/file.spec.ts` to execute the test
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Run unit test
+
+Run `ng test` to execute the unit tests
